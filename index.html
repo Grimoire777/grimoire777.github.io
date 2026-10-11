@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grizmo — Match 3 by the Sea</title>
+<meta name="description" content="Match shells, rescue robots, and calm the tide in a handmade seaside puzzle. 44 levels across 20 story chapters. Coming soon to Google Play.">
+<style>
+  :root {
+    --sand:   #efe6d4;
+    --sand2:  #e6d9c0;
+    --ink:    #33231d;
+    --soft:   #6b5b50;
+    --sea:    #1f6f7d;
+    --seadeep:#14505c;
+    --red:    #ff5039;
+    --teal:   #35cab7;
+    --pink:   #ff8993;
+    --gold:   #ffc050;
+    --purple: #b480eb;
+    --green:  #7fd564;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--sand);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    background: linear-gradient(180deg, var(--seadeep) 0%, var(--sea) 55%, #3b96a3 100%);
+    color: #f4efe3;
+    text-align: center;
+    padding: 72px 20px 0;
+    overflow: hidden;
+  }
+  .hero h1 {
+    font-size: clamp(2.6em, 9vw, 4.2em);
+    letter-spacing: 0.02em;
+    text-shadow: 0 3px 0 rgba(0,0,0,0.25);
+  }
+  .hero .tagline {
+    font-size: clamp(1.05em, 3.6vw, 1.35em);
+    margin: 14px auto 26px;
+    max-width: 560px;
+    color: #dceef0;
+    font-style: italic;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--gold);
+    color: #4a3410;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 0.82em;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    border-radius: 999px;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+    margin-bottom: 44px;
+  }
+  .shell-row {
+    display: flex;
+    justify-content: center;
+    gap: clamp(6px, 2.4vw, 18px);
+    padding: 0 10px;
+    transform: translateY(26px);
+  }
+  .shell-row svg {
+    width: clamp(42px, 11vw, 72px);
+    height: auto;
+    filter: drop-shadow(0 5px 4px rgba(0,0,0,0.30));
+  }
+  .wave-cut {
+    display: block;
+    width: 100%;
+    height: 54px;
+    background: var(--sand);
+    clip-path: polygon(0 60%, 4% 42%, 9% 58%, 14% 38%, 19% 56%, 25% 40%, 31% 58%, 37% 42%, 43% 58%, 50% 38%, 57% 56%, 63% 40%, 69% 58%, 75% 42%, 81% 58%, 87% 40%, 93% 56%, 97% 44%, 100% 58%, 100% 100%, 0 100%);
+    margin-top: -1px;
+  }
+
+  /* ---------- sections ---------- */
+  .wrap { max-width: 680px; margin: 0 auto; padding: 48px 20px; }
+  .wrap h2 {
+    font-size: 1.5em;
+    color: var(--seadeep);
+    margin-bottom: 14px;
+  }
+  .wrap p + h2 { margin-top: 36px; }
+  .wrap p { margin-bottom: 14px; }
+
+  .feature {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid var(--sand2);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 0 rgba(51,35,29,0.06);
+  }
+  .feature .dot {
+    flex: 0 0 auto;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    margin-top: 7px;
+  }
+  .feature h3 { font-size: 1.05em; margin-bottom: 4px; color: var(--ink); }
+  .feature p { margin: 0; color: var(--soft); font-size: 0.95em; }
+
+  /* ---------- footer ---------- */
+  footer {
+    background: var(--seadeep);
+    color: #bcd8dc;
+    text-align: center;
+    font-size: 0.88em;
+    padding: 34px 20px 40px;
+    margin-top: 24px;
+  }
+  footer a { color: #ffe3a1; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  footer .tiny { margin-top: 10px; font-size: 0.9em; color: #8fb6bc; }
+
+  @media (prefers-color-scheme: dark) {
+    /* The page is already sea-dark at top and warm below; keep it as designed. */
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Grizmo</h1>
+  <p class="tagline">Match shells, rescue robots, and calm the tide in a handmade seaside puzzle.</p>
+  <span class="badge">Coming soon to Google Play</span>
+  <div class="shell-row" aria-hidden="true">
+    <!-- six scallop shells in the game's palette -->
+    <svg viewBox="0 0 64 60"><path d="M32 56 L10 26 A26 26 0 0 1 54 26 Z" fill="#ff5039"/><path d="M32 56 L20 24 M32 56 L32 18 M32 56 L44 24" stroke="#c22f1e" stroke-width="2.5" fill="none"/><path d="M10 26 A26 26 0 0 1 54 26" fill="none" stroke="#ffd9d2" stroke-width="3"/></svg>
+    <svg viewBox="0 0 64 60"><path d="M32 56 L10 26 A26 26 0 0 1 54 26 Z" fill="#35cab7"/><path d="M32 56 L20 24 M32 56 L32 18 M32 56 L44 24" stroke="#1d8f80" stroke-width="2.5" fill="none"/><path d="M10 26 A26 26 0 0 1 54 26" fill="none" stroke="#d2f5f0" stroke-width="3"/></svg>
+    <svg viewBox="0 0 64 60"><path d="M32 56 L10 26 A26 26 0 0 1 54 26 Z" fill="#ffc050"/><path d="M32 56 L20 24 M32 56 L32 18 M32 56 L44 24" stroke="#c88b1d" stroke-width="2.5" fill="none"/><path d="M10 26 A26 26 0 0 1 54 26" fill="none" stroke="#ffeccb" stroke-width="3"/></svg>
+    <svg viewBox="0 0 64 60"><path d="M32 56 L10 26 A26 26 0 0 1 54 26 Z" fill="#b480eb"/><path d="M32 56 L20 24 M32 56 L32 18 M32 56 L44 24" stroke="#8352bd" stroke-width="2.5" fill="none"/><path d="M10 26 A26 26 0 0 1 54 26" fill="none" stroke="#e9dcf9" stroke-width="3"/></svg>
+    <svg viewBox="0 0 64 60"><path d="M32 56 L10 26 A26 26 0 0 1 54 26 Z" fill="#7fd564"/><path d="M32 56 L20 24 M32 56 L32 18 M32 56 L44 24" stroke="#519f3a" stroke-width="2.5" fill="none"/><path d="M10 26 A26 26 0 0 1 54 26" fill="none" stroke="#def5d4" stroke-width="3"/></svg>
+    <svg viewBox="0 0 64 60"><path d="M32 56 L10 26 A26 26 0 0 1 54 26 Z" fill="#ff8993"/><path d="M32 56 L20 24 M32 56 L32 18 M32 56 L44 24" stroke="#cf5560" stroke-width="2.5" fill="none"/><path d="M10 26 A26 26 0 0 1 54 26" fill="none" stroke="#ffdde0" stroke-width="3"/></svg>
+  </div>
+</header>
+<div class="wave-cut" aria-hidden="true"></div>
+
+<main class="wrap">
+  <h2>A little robot and an untidy coast</h2>
+  <p>A harbour robot wakes up half-buried in the sand, missing his memory
+  and bothered by one thing above all: the shells are out of order.
+  <strong>Grizmo</strong> is a match-3 puzzle adventure set on a hand-drawn
+  coast — 44 levels across 20 story chapters, with more on the way.</p>
+
+  <h2>What's waiting up the coast</h2>
+
+  <div class="feature">
+    <span class="dot" style="background:#35cab7"></span>
+    <div><h3>Match by the sea</h3>
+    <p>Swap seashells to make lines and squares. Four in a row makes a
+    stripe, five makes the octopus, and swapping two specials together
+    makes something bigger. Fish dart out of every blast.</p></div>
+  </div>
+
+  <div class="feature">
+    <span class="dot" style="background:#ffc050"></span>
+    <div><h3>Rescue the robots</h3>
+    <p>Broken robots are waiting up the coast — a ferry-bot who lost her
+    cargo, a frozen tide-mill keeper, a forge guardian who'd rather not
+    fight you. Each chapter's puzzles are their story.</p></div>
+  </div>
+
+  <div class="feature">
+    <span class="dot" style="background:#b480eb"></span>
+    <div><h3>A coast that fights back</h3>
+    <p>Ice that pins shells in place. A green tide that creeps while
+    you're busy. Rust that corrodes what you ignore. Cipher shells that
+    change colour when you look away. Chained charges that go off in one
+    spark — and at the heart of it all, the failing Aether Engine.</p></div>
+  </div>
+
+  <div class="feature">
+    <span class="dot" style="background:#7fd564"></span>
+    <div><h3>Honest puzzling</h3>
+    <p>No timers pushing you. No internet needed — play in a tunnel, on a
+    plane, anywhere. Every level hand-tuned and play-tested.</p></div>
+  </div>
+
+  <div class="feature">
+    <span class="dot" style="background:#ff5039"></span>
+    <div><h3>Handmade, literally</h3>
+    <p>Every shell, wave, robot and sound is drawn and synthesised in
+    code. The whole game is smaller than a single photo on your phone.</p></div>
+  </div>
+</main>
+
+<footer>
+  <p><a href="privacy.html">Privacy policy</a></p>
+  <p class="tiny">© 2026 Grimoire777 · Grizmo is published by Melhem Studios LLC</p>
+</footer>
+
+</body>
+</html>

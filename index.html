@@ -113,6 +113,40 @@
   .feature h3 { font-size: 1.05em; margin-bottom: 4px; color: var(--ink); }
   .feature p { margin: 0; color: var(--soft); font-size: 0.95em; }
 
+  /* ---------- screenshots ---------- */
+  .shots-band {
+    background: var(--sea);
+    padding: 44px 0 50px;
+  }
+  .shots-band h2 {
+    text-align: center;
+    color: #f4efe3;
+    font-size: 1.5em;
+    margin-bottom: 24px;
+  }
+  .shots {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 4px 20px 14px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .shots img {
+    flex: 0 0 auto;
+    width: min(240px, 62vw);
+    height: auto;
+    border-radius: 18px;
+    border: 4px solid #0f3f4a;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    scroll-snap-align: center;
+  }
+  @media (min-width: 740px) {
+    .shots { justify-content: center; overflow-x: visible; }
+  }
+
   /* ---------- footer ---------- */
   footer {
     background: var(--seadeep);
@@ -197,6 +231,15 @@
     code. The whole game is smaller than a single photo on your phone.</p></div>
   </div>
 </main>
+
+<section class="shots-band">
+  <h2>From the game</h2>
+  <div class="shots">
+    <img src="shot1.jpg" alt="A match-3 board of seashells on the sand — a ship sails across as the announcer calls Raise the sails!">
+    <img src="shot2.jpg" alt="A big cascade on the shell board — Riptide!">
+    <img src="shot3.jpg" alt="The coast map: a winding path of levels past the rescued robots Wren, Tick, Delve and Weir">
+  </div>
+</section>
 
 <footer>
   <p><a href="privacy.html">Privacy policy</a></p>
